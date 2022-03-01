@@ -1,0 +1,9 @@
+---
+#- hosts: [marseille|paris|france_sensors]
+- hosts: bucharest_srcs
+  become: true
+  gather_facts: no
+  vars:
+    script_action: uninstall
+  roles:
+    - cyperf-agent

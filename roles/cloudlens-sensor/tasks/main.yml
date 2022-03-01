@@ -1,0 +1,5 @@
+
+---
+- name: "{{ script_action }}"
+  import_tasks: main_{{ script_action }}.yml
+

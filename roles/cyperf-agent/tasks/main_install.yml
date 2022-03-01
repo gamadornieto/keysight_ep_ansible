@@ -1,0 +1,21 @@
+---
+
+- name:  Copy debian package
+  copy:
+   mode: '0777'
+   src: ../rpms/tiger_x86_64_ixos-8.50_ixstack-raw_release_1.0.3.249.deb
+   dest: /home/{{home_user}}
+   owner:  "{{home_user}}"
+   group:  "{{home_user}}"
+
+- name: Install CyPerf deb package
+  apt: 
+    deb=/home/{{home_user}}/tiger_x86_64_ixos-8.50_ixstack-raw_release_1.0.3.249.deb
+    state=present
+
+- name: Configure Cyperf Mgmnt if {{ CyperfManagerIP }}
+  shell: cyperfagent controller set {{ CyperfManagerIP }}
+
+- name: Configure Cyperf test if {{ CyperfAgentIface }}
+  shell: cyperfagent interface test set {{ CyperfAgentIface }}
+ 

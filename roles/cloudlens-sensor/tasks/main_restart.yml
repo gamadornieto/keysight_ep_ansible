@@ -1,0 +1,16 @@
+---
+
+- name: restart_cloudlens
+  docker_container:
+    name: "MY_CL_{{ inventory_hostname }}"
+    image: "{{CloudlensManagerIP}}/sensor:latest"
+    state: started
+    network_mode: host
+    capabilities:
+     - NET_RAW
+     - SYS_RESOURCE
+     - SYS_MODULE
+     - NET_ADMIN
+    privileged: true
+    restart_policy: on-failure
+    command: --accept_eula yes --project_key {{ CLOUDLENS_PROJECT_KEY }} --server  {{CloudlensManagerIP}} --ssl_verify no  --custom_tags owner=gustavo type={{Type}}

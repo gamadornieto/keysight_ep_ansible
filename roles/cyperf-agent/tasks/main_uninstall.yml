@@ -1,0 +1,9 @@
+---
+
+- name: Cyperf 1.1 update. Fix. remove symbolic link /opt/keysight/tiger/active
+  file: path='/opt/keysight/tiger/active' state=absent
+
+- name: Remove CyPerf deb package
+  apt: 
+    name=tiger-x86-64-ixos-8.50-ixstack-raw-release-1.0.3.249
+    state=absent

@@ -1,0 +1,7 @@
+---
+
+ - name: stop_cloudlens
+   docker_container:
+     name: "MY_CL_{{ inventory_hostname }}"
+     image: "{{CloudlensManagerIP}}/sensor:latest"
+     state: stopped
