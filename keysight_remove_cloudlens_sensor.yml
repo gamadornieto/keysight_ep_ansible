@@ -1,5 +1,4 @@
 ---
-#- hosts: [marseille|paris|france_sensors]
 - hosts: bucharest
   become: true
   gather_facts: no

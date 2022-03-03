@@ -1,0 +1,6 @@
+---
+
+- name: Uninstall
+  shell: /tmp/agent-22.1.0.2785.run -- -u -n "MY_TS_{{ inventory_hostname }}"
+  args:
+     executable: /bin/bash

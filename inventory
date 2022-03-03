@@ -20,13 +20,19 @@ Type=SRC_A
 [bucharest_tools:vars]
 Type=Tool1
 
-# Global variables
 [all:vars]
-ansible_python_interpreter=/usr/bin/python3
+# Cloudlens
 CloudlensManagerIP=<CloudlensManagerIP>
 CLOUDLENS_PROJECT_KEY=<CLOUDLENS_PROJECT_KEY>
+# Cyperf
 CyperfManagerIP=<CyperfManagerIP>
 CyperfAgentIface=ens192
-ansible_ssh_user=<interface>
-ansible_ssh_pass=<user>
+# ThreatSim
+ThreatSimOID=<ThreatSimOID>
+ThreatSimMgmtIF=ens160
+ThreatSimTestIF=ens192
+# Global variables
+ansible_ssh_pass= <user>
+home_user= <user>
 home_user=<user>
+ansible_python_interpreter=/usr/bin/python3

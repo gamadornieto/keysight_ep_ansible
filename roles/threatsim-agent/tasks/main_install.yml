@@ -1,0 +1,14 @@
+---
+
+- name: Download agent from ThreatSim SaaS
+  get_url:
+   url: https://api.threatsimulator.cloud/agent/download?OrganizationID={{ThreatSimOID}}&Type=onpremise-linux
+   dest: /tmp/agent-22.1.0.2785.run
+   validate_certs: no
+   force: no
+   mode: '0755'
+
+- name: Start Agent
+  shell: yes | /tmp/agent-22.1.0.2785.run --keep -- -n "MY_TS_{{ inventory_hostname }}" -c {{ThreatSimMgmtIF}} -d {{ThreatSimTestIF}} 
+  args:
+     executable: /bin/bash

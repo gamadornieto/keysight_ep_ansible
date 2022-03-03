@@ -1,8 +1,8 @@
 ---
-- hosts: bucharest
+- hosts: 192.168.0.2
   become: true
   gather_facts: no
   vars:
     script_action: install
   roles:
-    - cloudlens-sensor
+    - threatsim-agent
