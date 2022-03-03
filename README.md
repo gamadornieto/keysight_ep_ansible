@@ -58,15 +58,6 @@ home_user=<user>
 ansible_python_interpreter=/usr/bin/python3
 
 ```
-- hosts: bucharest_srcs
-  become: true
-  gather_facts: no
-  vars:
-    script_action: install
-  roles:
-    - cyperf-agent
-```
-
 ## Dependencies
 Ixia CloudlensManager and/or Cyperf Manager deployed and/or an account on ThreatSim SaaS Manager.
 
